@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>My Tasks</h1>
+    <a class="btn btn-primary mb-3" href="{% url 'task_create' %}">Add Task</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.title }}</td>
+                <td>{{ task.category.name }}</td>
+                <td>{{ task.get_priority_display }}</td>
+                <td>{{ task.due_date }}</td>
+                <td>{{ task.completed }}</td>
+                <td>
+                    <a class="btn btn-success btn-sm" href="{% url 'task_complete' task.id %}">Complete</a>
+                    <a class="btn btn-warning btn-sm" href="{% url 'task_incomplete' task.id %}">Incomplete</a>
+                    <a class="btn btn-danger btn-sm" href="{% url 'task_delete' task.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Python/Django
+*.pyc
+__pycache__/
+db.sqlite3
+/staticfiles/
+/.env
+*.log
+.idea/
+.vscode/
+*.sqlite3
+*.sqlite
+*.py[cod]
+*.swp
+*.DS_Store
