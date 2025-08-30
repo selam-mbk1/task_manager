@@ -1,3 +1,4 @@
+ECHO is on.
 # Task Manager Project
 
 A full-featured Django Task Management app with:
@@ -12,7 +13,7 @@ A full-featured Django Task Management app with:
 ## Setup Instructions
 
 1. Clone the repository:
-git clone https://github.com/selam-mbk1/task_manager.git
+git clone https://github.com/yourusername/task_manager.git
 
 2. Install dependencies:
 pip install -r requirements.txt
